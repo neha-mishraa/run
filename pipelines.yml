@@ -1,11 +1,11 @@
 
-resources:
+# resources:
       
-  - name: myRepo
-    type: GitRepo
-    configuration:
-      gitProvider: vijay_git
-      path: vijayreddy1991/run
+#   - name: myRepo
+#     type: GitRepo
+#     configuration:
+#       gitProvider: vijay_git
+#       path: vijayreddy1991/run
 
 pipelines:
 
@@ -16,54 +16,53 @@ pipelines:
         type: PowerShell
         configuration:
 #           nodePool: win_2019         
-          inputResources:
-            - name: myRepo
 
         execution:
           onExecute:
-            - add_run_variables testvariable="asdffdjksfj.       k455457457"
-            - add_pipeline_variables vijay="kumar.      1"    
-            - export_pipeline_variables jfrog="pipe  "
-            - export_run_variables jfrog1="pip   "             
+            - echo "vijay"
+#             - add_run_variables testvariable="asdffdjksfj.       k455457457"
+#             - add_pipeline_variables vijay="kumar.      1"    
+#             - export_pipeline_variables jfrog="pipe  "
+#             - export_run_variables jfrog1="pip   "             
 
 
-      - name: restore_pipelines
-        type: Bash
-        configuration:       
-          inputResources:
-            - name: myRepo
-          inputSteps:
-            - name: restore_files
-        execution:
-          onExecute:
-            - printenv
-
-      - name: functions
-        type: Bash
-        configuration:     
-          inputResources:
-            - name: myRepo
+#       - name: restore_pipelines
+#         type: Bash
+#         configuration:       
+#           inputResources:
+#             - name: myRepo
 #           inputSteps:
-#             - name: restore_pipelines
-        execution:
-          onExecute:
-            - add_run_variables testvariable="asdffdjksfjk566851"
-            - add_pipeline_variables vijay="kumar.      1"     
-            - export_pipeline_variables jfrog="pipelines.  "
-            - export_run_variables jfrog1="pipelines1.   "   
+#             - name: restore_files
+#         execution:
+#           onExecute:
+#             - printenv
 
-      - name: restore
-        type: PowerShell
-        configuration:
-          nodePool: win_2019         
-          inputResources:
-            - name: myRepo
-          inputSteps:
-            - name: functions
-        execution:
-          onExecute:
-            - if($res_myRepo_jfrog1 -eq $null){ Write-Error "Stop" -ErrorAction Stop} 
-            - if($res_myRepo_jfrog -eq $null){ Write-Error "Stop" -ErrorAction Stop}    
+#       - name: functions
+#         type: Bash
+#         configuration:     
+#           inputResources:
+#             - name: myRepo
+# #           inputSteps:
+# #             - name: restore_pipelines
+#         execution:
+#           onExecute:
+#             - add_run_variables testvariable="asdffdjksfjk566851"
+#             - add_pipeline_variables vijay="kumar.      1"     
+#             - export_pipeline_variables jfrog="pipelines.  "
+#             - export_run_variables jfrog1="pipelines1.   "   
+
+#       - name: restore
+#         type: PowerShell
+#         configuration:
+#           nodePool: win_2019         
+#           inputResources:
+#             - name: myRepo
+#           inputSteps:
+#             - name: functions
+#         execution:
+#           onExecute:
+#             - if($res_myRepo_jfrog1 -eq $null){ Write-Error "Stop" -ErrorAction Stop} 
+#             - if($res_myRepo_jfrog -eq $null){ Write-Error "Stop" -ErrorAction Stop}    
             
           
           
