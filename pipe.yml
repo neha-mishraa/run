@@ -37,8 +37,6 @@ pipelines:
       - name: test2
         type: Bash
         configuration:
-          integrations:
-            - name: vijay
           inputSteps:
             - name: test
           inputResources:
@@ -58,8 +56,6 @@ pipelines:
       - name: test3
         type: Bash
         configuration:
-          integrations:
-            - name: vijay
           inputResources:
             - name: vijay
           inputSteps:
