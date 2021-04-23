@@ -2,7 +2,7 @@ resources:
   - name: git_vijay
     type: GitRepo
     configuration:
-      gitProvider: vijay
+      gitProvider: s_git
       path: neha-mishraa/run
       branches:     
         include: master
@@ -12,7 +12,7 @@ resources:
   - name: git_repo1
     type: GitRepo
     configuration:
-      gitProvider: vijay
+      gitProvider: s_git
       path: neha-mishraa/runtime
       branches:     
         include: master
